@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.auribox.model.Message" id="message" destroy-method="closeMethodIsra">
+		<property name="header" value="Spring Header_1"/>
+		<property name="payload" value="Spring Payload_1"/>
+	</bean>
+
+	<bean class="com.auribox.model.Message" id="message2" init-method="initMethodIsra">
+		<property name="header" value="Spring Header_2"/>
+		<property name="payload" value="Spring Payload_2"/>
+	</bean>
+	
+	<bean class="com.auribox.model.Message" id="message3" init-method="initMethodIsra">
+		<constructor-arg name="header" value="Hearder by Constructor"/>
+	</bean>
+	
+</beans>
